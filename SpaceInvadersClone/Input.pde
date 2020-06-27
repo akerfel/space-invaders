@@ -5,7 +5,10 @@ void keyPressed() {
     else if (key == 'a') {
         player.startMovingLeft();
     }
-    else if (key == CODED) {
+    if (key == ' ') {
+        createNewPlayerBullet();
+    }
+    if (key == CODED) {
         if (keyCode == RIGHT) {
             player.startMovingRight();
             
@@ -23,7 +26,8 @@ void keyReleased() {
     else if (key == 'a') {
         player.stopMovingLeft();
     }
-    else if (key == CODED) {
+    
+    if (key == CODED) {
         if (keyCode == RIGHT) {
             player.stopMovingRight();
             

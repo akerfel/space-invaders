@@ -7,15 +7,17 @@ import java.util.Iterator;
 // https://www.andoverpatio.co.uk/21/space-invaders/
 
 ArrayList<Alien> aliens;
-ArrayList<AlienBullet> alienBullets;
 Player player;
+ArrayList<AlienBullet> alienBullets;
+ArrayList<PlayerBullet> playerBullets;
 boolean gameRunning;
 
 void setup() {
     size(896, 1024);
     aliens = new ArrayList<Alien>();
-    alienBullets = new ArrayList<AlienBullet>();
     player = new Player();
+    alienBullets = new ArrayList<AlienBullet>();
+    playerBullets = new ArrayList<PlayerBullet>();
     gameRunning = true;
     createAliens();
 }

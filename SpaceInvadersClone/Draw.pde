@@ -1,8 +1,9 @@
 void drawEverything() {
     background(0, 0, 0);
     drawAliens();
-    drawAlienBullets();
     drawPlayer();
+    drawAlienBullets();
+    drawPlayerBullets();
 }
 
 void drawAliens() {
@@ -25,6 +26,17 @@ void drawAlienBullets() {
 void drawAlienBullet(AlienBullet alienBullet) {
     fill(255, 0, 0);
     rect(alienBullet.x, alienBullet.y, alienBullet.w, alienBullet.h); // game logic treats 
+}
+
+void drawPlayerBullets() {
+    for (PlayerBullet playerBullet : playerBullets) {
+        drawPlayerBullet(playerBullet);    
+    }
+}
+
+void drawPlayerBullet(PlayerBullet playerBullet) {
+    fill(100, 0, 255);
+    rect(playerBullet.x, playerBullet.y, playerBullet.w, playerBullet.h); // game logic treats 
 }
 
 void drawPlayer() {
