@@ -3,7 +3,7 @@ void updateLogic() {
         updateAliens();
         updateAlienBullets();
         updatePlayer();
-        handlePlayerHitByBullet();
+        checkIfPlayerHitByBullet();
     }
 }
 
@@ -11,14 +11,14 @@ void updatePlayer() {
     player.update();    
 }
 
-void handlePlayerHitByBullet() {
+void checkIfPlayerHitByBullet() {
     for (AlienBullet ab : alienBullets) {
-        // If collision detected: stop gaming
+        // If collision detected: game over
         if (player.x < ab.x + ab.w &&
            player.x + player.w > ab.x &&
            player.y < ab.y + ab.h &&
            player.y + player.h > ab.y) {
-               gameRunning = false;
+              gameOver();
         }
     }
 }
@@ -27,18 +27,35 @@ void updateAliens() {
     for (Alien alien : aliens) {
         alien.update();    
     }
-    if (anyAlienHasHitWall()) {
+    if (anyAlienHasHitsVerticalWall()) {
         for (Alien alien : aliens) {
             alien.invertVelocity();
             alien.goDown();
         }
     }
+    if (anyAlienHasHitsHorizontalWall()) {
+        gameOver();
+    }
 }
 
-boolean anyAlienHasHitWall() {
+void gameOver() {
+    gameRunning = false;
+}
+
+boolean anyAlienHasHitsVerticalWall() {
     boolean alienHasHitWall = false;
     for (Alien alien : aliens) {
         if (alien.x <= 0 || alien.x + alien.w >= width) {
+            alienHasHitWall = true;
+        }
+    }
+    return alienHasHitWall;
+}
+
+boolean anyAlienHasHitsHorizontalWall() {
+    boolean alienHasHitWall = false;
+    for (Alien alien : aliens) {
+        if (alien.y + alien.h >= height) {
             alienHasHitWall = true;
         }
     }

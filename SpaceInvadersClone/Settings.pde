@@ -3,7 +3,7 @@ public static class Settings {
     static int alienWidth = 11 * 4;
     static int alienHeight = 8 * 4;
     static int alienSpeed = 3;
-    static int alienDropHeight = 10;
+    static int alienDropHeight = 5;
     
     // Alien bullets
     static int alienBulletWidth = 10;

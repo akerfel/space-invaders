@@ -1,5 +1,11 @@
 void keyPressed() {
-    if (key == CODED) {
+    if (key == 'd') {
+        player.startMovingRight();
+    }
+    else if (key == 'a') {
+        player.startMovingLeft();
+    }
+    else if (key == CODED) {
         if (keyCode == RIGHT) {
             player.startMovingRight();
             
@@ -11,7 +17,13 @@ void keyPressed() {
 }
 
 void keyReleased() {
-    if (key == CODED) {
+    if (key == 'd') {
+        player.stopMovingRight();
+    }
+    else if (key == 'a') {
+        player.stopMovingLeft();
+    }
+    else if (key == CODED) {
         if (keyCode == RIGHT) {
             player.stopMovingRight();
             
