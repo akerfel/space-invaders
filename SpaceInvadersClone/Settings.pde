@@ -6,14 +6,14 @@ public static class Settings {
     static int alienDropHeight = 10;
     
     // Alien bullets
-    static int alienBulletWidth = 3;
-    static int alienBulletHeight = 10;
+    static int alienBulletWidth = 10;
+    static int alienBulletHeight = 20;
     static int alienBulletSpeed = 5;
     
     // Player
     static int playerStartX = 50;
     static int playerStartY = 1024 - 200;
-    static int playerWidth = 30;
+    static int playerWidth = 50;
     static int playerHeight = 15;
     static int playerSpeed = 5;
 }

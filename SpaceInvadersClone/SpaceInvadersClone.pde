@@ -6,16 +6,17 @@ import java.util.Iterator;
 // Here is someone elses clone:
 // https://www.andoverpatio.co.uk/21/space-invaders/
 
-
 ArrayList<Alien> aliens;
 ArrayList<AlienBullet> alienBullets;
 Player player;
+boolean gameRunning;
 
 void setup() {
     size(896, 1024);
     aliens = new ArrayList<Alien>();
     alienBullets = new ArrayList<AlienBullet>();
     player = new Player();
+    gameRunning = true;
     createAliens();
 }
 

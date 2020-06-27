@@ -1,11 +1,26 @@
 void updateLogic() {
-    updateAliens();
-    updateAlienBullets();
-    updatePlayer();
+    if (gameRunning) {
+        updateAliens();
+        updateAlienBullets();
+        updatePlayer();
+        handlePlayerHitByBullet();
+    }
 }
 
 void updatePlayer() {
     player.update();    
+}
+
+void handlePlayerHitByBullet() {
+    for (AlienBullet ab : alienBullets) {
+        // If collision detected: stop gaming
+        if (player.x < ab.x + ab.w &&
+           player.x + player.w > ab.x &&
+           player.y < ab.y + ab.h &&
+           player.y + player.h > ab.y) {
+               gameRunning = false;
+        }
+    }
 }
 
 void updateAliens() {

@@ -24,7 +24,7 @@ void drawAlienBullets() {
 
 void drawAlienBullet(AlienBullet alienBullet) {
     fill(255, 0, 0);
-    rect(alienBullet.x, alienBullet.y, 3, 15);
+    rect(alienBullet.x, alienBullet.y, alienBullet.w, alienBullet.h); // game logic treats 
 }
 
 void drawPlayer() {
