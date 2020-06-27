@@ -2,6 +2,7 @@ void drawEverything() {
     background(0, 0, 0);
     drawAliens();
     drawAlienBullets();
+    drawPlayer();
 }
 
 void drawAliens() {
@@ -24,4 +25,9 @@ void drawAlienBullets() {
 void drawAlienBullet(AlienBullet alienBullet) {
     fill(255, 0, 0);
     rect(alienBullet.x, alienBullet.y, 3, 15);
+}
+
+void drawPlayer() {
+    fill(0, 255, 0);
+    rect(player.x, player.y, player.w, player.h);    
 }

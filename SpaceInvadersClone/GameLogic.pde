@@ -1,6 +1,11 @@
 void updateLogic() {
     updateAliens();
     updateAlienBullets();
+    updatePlayer();
+}
+
+void updatePlayer() {
+    player.update();    
 }
 
 void updateAliens() {
