@@ -17,10 +17,10 @@ public class Player {
     }
     
     void update() {
-        if (isMovingRight) {
+        if (isMovingRight && x + w < width) {
             x += vx;
         }
-        else if (isMovingLeft) {
+        else if (isMovingLeft && x > 0) {
             x -= vx;    
         }
     }
