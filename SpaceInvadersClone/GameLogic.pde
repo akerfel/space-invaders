@@ -130,6 +130,6 @@ void removePlayerBulletsOutsideScreen() {
 
 void createNewPlayerBullet() {
     if (playerBullets.size() < Settings.playerBulletsConcurrentMaxAmount) {
-        playerBullets.add(new PlayerBullet(player.x + player.w/2, player.y));   
+        playerBullets.add(new PlayerBullet(player.x + player.w/2 - Settings.playerBulletWidth / 2, player.y - Settings.playerBulletHeight));   
     }
 }

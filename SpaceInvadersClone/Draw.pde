@@ -42,4 +42,7 @@ void drawPlayerBullet(PlayerBullet playerBullet) {
 void drawPlayer() {
     fill(0, 255, 0);
     rect(player.x, player.y, player.w, player.h);    
+    rectMode(CENTER);
+    rect(player.x + player.w / 2, player.y, 8, 8);    
+    rectMode(CORNER); // reset to default rectMode
 }

@@ -8,7 +8,7 @@ public static class Settings {
     // Player
     static int playerStartX = 50;
     static int playerStartY = 1024 - 200;
-    static int playerWidth = 50;
+    static int playerWidth = 48;
     static int playerHeight = 15;
     static int playerSpeed = 5;
     
