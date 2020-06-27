@@ -17,3 +17,15 @@ boolean anyAlienHasHitWall() {
     }
     return alienHasHitWall;
 }
+
+void createAliens() {
+    int rows = 5;
+    int columns = 11;
+
+    for (int y = 0; y < rows; y++) {
+        for (int x = 0; x < columns; x++) {
+            Alien alien = new Alien(50 + x * (Settings.alienWidth + 3 * 4), 200 + y * 40);
+            aliens.add(alien);
+        }
+    }
+}

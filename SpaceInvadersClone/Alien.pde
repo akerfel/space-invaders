@@ -4,15 +4,15 @@ public class Alien {
     int vx;
     int w;    // width
     int h;    // height
-    int jumpHeight;
+    int dropHeight;
     
     public Alien(int x, int y) {
         this.x = x;
         this.y = y;
-        vx = 5;
-        w = 11 * 4;
-        h = 8 * 4;
-        jumpHeight = 15;
+        vx = Settings.alienSpeed;
+        w = Settings.alienWidth;
+        h = Settings.alienHeight;
+        dropHeight = 15;
     }
     
     public void updatePosition() {
@@ -24,6 +24,6 @@ public class Alien {
     }
     
     public void goDown() {
-        y += jumpHeight;
+        y += dropHeight;
     }
 }

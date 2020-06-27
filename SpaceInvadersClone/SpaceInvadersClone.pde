@@ -1,16 +1,16 @@
 import java.util.ArrayList;
 
+// I am creating something similar to this game
+// https://www.andoverpatio.co.uk/21/space-invaders/
+// The original arcade game was released in 1978
+// https://en.wikipedia.org/wiki/Space_Invaders?oldformat=true
+
 ArrayList<Alien> aliens;
-Alien alien1;
-Alien alien2;
 
 void setup() {
     size(896, 1024);
     aliens = new ArrayList<Alien>();
-    alien1 = new Alien(50, 50);
-    alien2 = new Alien(100, 50);
-    aliens.add(alien1);
-    aliens.add(alien2);
+    createAliens();
 }
 
 void draw() {
