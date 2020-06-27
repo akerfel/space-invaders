@@ -1,16 +1,23 @@
 void updateLogic() {
+    updateAliens();
+    updateAlienBullets();
+}
+
+void updateAliens() {
+    for (Alien alien : aliens) {
+        alien.update();    
+    }
     if (anyAlienHasHitWall()) {
         for (Alien alien : aliens) {
             alien.invertVelocity();
             alien.goDown();
-        }            
+        }
     }
 }
 
 boolean anyAlienHasHitWall() {
     boolean alienHasHitWall = false;
     for (Alien alien : aliens) {
-        alien.updatePosition();    
         if (alien.x <= 0 || alien.x + alien.w >= width) {
             alienHasHitWall = true;
         }
@@ -26,6 +33,23 @@ void createAliens() {
         for (int x = 0; x < columns; x++) {
             Alien alien = new Alien(50 + x * (Settings.alienWidth + 3 * 4), 200 + y * 40);
             aliens.add(alien);
+        }
+    }
+}
+
+void updateAlienBullets() {
+    for (AlienBullet alienBullet : alienBullets) {
+        alienBullet.update();    
+    }
+    removeAlienBulletsOutsideScreen();
+}
+
+void removeAlienBulletsOutsideScreen() {
+    Iterator<AlienBullet> iterator = alienBullets.iterator();
+    while (iterator.hasNext()) {
+        AlienBullet alienBullet = iterator.next();
+        if (alienBullet.y > height) {
+            iterator.remove();   
         }
     }
 }

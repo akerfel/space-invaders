@@ -12,7 +12,19 @@ public class Alien {
         vx = Settings.alienSpeed;
         w = Settings.alienWidth;
         h = Settings.alienHeight;
-        dropHeight = 15;
+        dropHeight = Settings.alienDropHeight;
+    }
+    
+    public void update() {
+        updatePosition();
+        maybeShoot();
+    }
+    
+    public void maybeShoot() {
+        float chanceForAlienToShootEachFrame = 0.03;
+        if (random(0, 100) < chanceForAlienToShootEachFrame) {
+            alienBullets.add(new AlienBullet(this.x + this.w/2, this.y + this.h));
+        }
     }
     
     public void updatePosition() {

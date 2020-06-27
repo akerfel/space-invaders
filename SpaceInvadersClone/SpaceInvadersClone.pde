@@ -1,15 +1,18 @@
 import java.util.ArrayList;
+import java.util.Iterator;
 
-// I am creating something similar to this game
-// https://www.andoverpatio.co.uk/21/space-invaders/
-// The original arcade game was released in 1978
+// This is a clone of the original arcade game "Space Invaders" (released in 1978).
 // https://en.wikipedia.org/wiki/Space_Invaders?oldformat=true
+// Here is someone elses clone:
+// https://www.andoverpatio.co.uk/21/space-invaders/
 
 ArrayList<Alien> aliens;
+ArrayList<AlienBullet> alienBullets;
 
 void setup() {
     size(896, 1024);
     aliens = new ArrayList<Alien>();
+    alienBullets = new ArrayList<AlienBullet>();
     createAliens();
 }
 
