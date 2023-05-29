@@ -4,7 +4,7 @@ public class AlienBullet {
     int w;
     int h;
     int vy;
-    
+
     public AlienBullet(int x, int y) {
         this.x = x;
         this.y = y;
@@ -12,7 +12,7 @@ public class AlienBullet {
         this.h = Settings.alienBulletHeight;
         this.vy = Settings.alienBulletSpeed;
     }
-    
+
     public void update() {
         y += vy;
     }

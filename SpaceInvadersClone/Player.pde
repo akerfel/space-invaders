@@ -6,8 +6,8 @@ public class Player {
     int vx;
     boolean isMovingRight;
     boolean isMovingLeft;
-    
-    
+
+
     public Player() {
         this.x = Settings.playerStartX;
         this.y = Settings.playerStartY;
@@ -15,31 +15,30 @@ public class Player {
         this.h = Settings.playerHeight;
         this.vx = Settings.playerSpeed;
     }
-    
+
     void update() {
         if (isMovingRight && x + w < width) {
             x += vx;
-        }
-        else if (isMovingLeft && x > 0) {
-            x -= vx;    
+        } else if (isMovingLeft && x > 0) {
+            x -= vx;
         }
     }
-    
+
     void startMovingRight() {
         isMovingRight = true;
         isMovingLeft = false;
     }
-    
+
     void startMovingLeft() {
         isMovingLeft = true;
         isMovingRight = false;
     }
-    
+
     void stopMovingRight() {
-        isMovingRight = false;    
+        isMovingRight = false;
     }
-    
+
     void stopMovingLeft() {
-        isMovingLeft = false;    
+        isMovingLeft = false;
     }
 }

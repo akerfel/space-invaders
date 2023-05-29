@@ -4,7 +4,7 @@ public class PlayerBullet {
     int w;
     int h;
     int vy;
-    
+
     public PlayerBullet(int x, int y) {
         this.x = x;
         this.y = y;
@@ -12,7 +12,7 @@ public class PlayerBullet {
         this.h = Settings.playerBulletHeight;
         this.vy = Settings.playerBulletSpeed;
     }
-    
+
     public void update() {
         y -= vy;
     }

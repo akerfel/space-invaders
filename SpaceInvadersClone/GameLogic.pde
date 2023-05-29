@@ -10,17 +10,17 @@ void updateLogic() {
 }
 
 void updatePlayer() {
-    player.update();    
+    player.update();
 }
 
 void checkIfPlayerHitByBullet() {
     for (AlienBullet bullet : alienBullets) {
         // If collision detected: game over
         if (player.x < bullet.x + bullet.w &&
-           player.x + player.w > bullet.x &&
-           player.y < bullet.y + bullet.h &&
-           player.y + player.h > bullet.y) {
-              gameOver();
+            player.x + player.w > bullet.x &&
+            player.y < bullet.y + bullet.h &&
+            player.y + player.h > bullet.y) {
+            gameOver();
         }
     }
 }
@@ -33,11 +33,11 @@ void checkIfAlienHitByBullet() {
         while (bulletIterator.hasNext()) {
             PlayerBullet bullet = bulletIterator.next();
             if (alien.x < bullet.x + bullet.w &&
-               alien.x + alien.w > bullet.x &&
-               alien.y < bullet.y + bullet.h &&
-               alien.y + alien.h > bullet.y) {
-                  alienIterator.remove();
-                  bulletIterator.remove();
+                alien.x + alien.w > bullet.x &&
+                alien.y < bullet.y + bullet.h &&
+                alien.y + alien.h > bullet.y) {
+                alienIterator.remove();
+                bulletIterator.remove();
             }
         }
     }
@@ -45,7 +45,7 @@ void checkIfAlienHitByBullet() {
 
 void updateAliens() {
     for (Alien alien : aliens) {
-        alien.update();    
+        alien.update();
     }
     if (anyAlienHasHitsVerticalWall()) {
         for (Alien alien : aliens) {
@@ -96,15 +96,15 @@ void createAliens() {
 
 void updateAlienBullets() {
     for (AlienBullet alienBullet : alienBullets) {
-        alienBullet.update();    
+        alienBullet.update();
     }
     removeAlienBulletsOutsideScreen();
 }
 
 void updatePlayerBullets() {
     for (PlayerBullet playerBullet : playerBullets) {
-        playerBullet.update();    
-    }   
+        playerBullet.update();
+    }
     removePlayerBulletsOutsideScreen();
 }
 
@@ -113,23 +113,23 @@ void removeAlienBulletsOutsideScreen() {
     while (iterator.hasNext()) {
         AlienBullet alienBullet = iterator.next();
         if (alienBullet.y > height) {
-            iterator.remove();   
+            iterator.remove();
         }
     }
 }
 
 void removePlayerBulletsOutsideScreen() {
-   Iterator<PlayerBullet> iterator = playerBullets.iterator();
+    Iterator<PlayerBullet> iterator = playerBullets.iterator();
     while (iterator.hasNext()) {
         PlayerBullet playerBullet = iterator.next();
         if (playerBullet.y < 0) {
-            iterator.remove();   
+            iterator.remove();
         }
-    } 
+    }
 }
 
 void createNewPlayerBullet() {
     if (playerBullets.size() < Settings.playerBulletsConcurrentMaxAmount) {
-        playerBullets.add(new PlayerBullet(player.x + player.w/2 - Settings.playerBulletWidth / 2, player.y - Settings.playerBulletHeight));   
+        playerBullets.add(new PlayerBullet(player.x + player.w/2 - Settings.playerBulletWidth / 2, player.y - Settings.playerBulletHeight));
     }
 }

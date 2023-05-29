@@ -11,12 +11,12 @@ public static class Settings {
     static int playerWidth = 48;
     static int playerHeight = 15;
     static int playerSpeed = 5;
-    
+
     // Alien bullets
     static int alienBulletWidth = 10;
     static int alienBulletHeight = 20;
     static int alienBulletSpeed = 5;
-    
+
     // Player bullets
     static int playerBulletWidth = 10;
     static int playerBulletHeight = 20;
